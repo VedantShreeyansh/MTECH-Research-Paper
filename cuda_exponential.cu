@@ -41,7 +41,7 @@ int main(int argc, char const *argv[]) {
     int result;
 
 
-    FILE *file = fopen("randomNum.txt", "r");
+    FILE *file = fopen("random_numbers.txt", "r");
     if (file == NULL) {
         printf("Failed to open the file for reading.\n");
         return 1;
