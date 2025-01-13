@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <mpi.h>
+#include "mpi.h"
 
 int exponentialSearch(int arr[], int start, int end, int x, int rank,int localSize) {
  //printf("start=%d end = %d\n",start,end);

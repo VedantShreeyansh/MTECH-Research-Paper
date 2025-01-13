@@ -36,10 +36,15 @@ int main() {
         return 1;
     }
 
-    // Find the size of the array
-    fseek(file, 0, SEEK_END);
-    int n = ftell(file) / sizeof(int);
-    fseek(file, 0, SEEK_SET); // Move back to the beginning of the file
+    // Count the number of elements in the file
+    int n = 0;
+    int temp;
+    while (fscanf(file, "%d", &temp) != EOF) {
+        n++;
+    }
+
+    // Move back to the beginning of the file
+    rewind(file);
 
     // Allocate memory for the array
     int *arr = (int *)malloc(n * sizeof(int));
@@ -58,7 +63,7 @@ int main() {
     fclose(file);
 
     // Element to search for
-    int target = 1222;
+    int target = 5000;
 
     // Perform exponential search
     int result = exponentialSearch(arr, n, target);
